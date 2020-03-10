@@ -30,7 +30,7 @@ body{
 }
 #side div{
 	margin-left: 33px;
-	margin-top: 20px;
+	margin-top: 25px;
 	margin-bottom: 18px;
 	font-size: 1.2rem;
 	display: inline-block;
@@ -97,7 +97,7 @@ body{
 	margin: 3% 3% 3% 4%;
 	padding: 5px;
 	width: 94%;
-	column-count: 2;
+	column-count: 3;
 	column-gap: 0;
 }
 
