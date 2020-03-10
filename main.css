@@ -1,0 +1,195 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	font-family: Roboto;
+	margin: 0;
+	padding: 0;
+	background-color:#272727;
+	-webkit-animation: fadeIn 2s ease 0s 1 normal;
+	animation: fadeIn 2s ease 0s 1 normal;
+}
+
+
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+
+
+#side{
+	color: #fff;
+	display: inline-block;
+	width: 0;
+}
+#side div{
+	margin-left: 33px;
+	margin-top: 20px;
+	margin-bottom: 18px;
+	font-size: 1.2rem;
+	display: inline-block;
+	transform-origin: 0;
+	transform: rotate(90deg);
+}
+
+.copy-value p{
+	font-size: .8rem;
+	width: auto;
+}
+
+.copy-value:hover{
+	background-color: #fff;
+	color: #000;
+}
+
+/*#icon{
+	width: 70px;
+	margin: 25px 0 0 25px; 
+}
+
+#icon img{
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+}
+
+#profile{
+	height: 280px;
+}
+
+#profile ul{
+	list-style: none;
+	color: gray;
+	font-size: 0.5em;
+	font-weight: bold;
+	line-height: 1.7em;
+	letter-spacing: 0.2em;
+	transform:rotate(90deg);
+}
+
+#sns{
+	padding: 0 0 0 28px;
+	list-style: none;
+}
+
+#sns li{
+	display: inline-block;
+}
+
+#sns li img{
+	width: 90%;
+}*/
+
+#main{
+	width: calc(100% - 63px);
+	margin-top: 30px;
+	float: right;
+	background-color: #EFEFEF;
+}
+
+#main ul{
+	margin: 3% 3% 3% 4%;
+	padding: 5px;
+	width: 94%;
+	column-count: 2;
+	column-gap: 0;
+}
+
+#main ul li{
+	color: gray;
+	font-size: 0.5em;
+	font-weight: bold;
+	line-height: 1.7em;
+	letter-spacing: 0.2em;
+	margin: 0 0 0 0;
+	list-style: none;
+	width: 90%;
+	padding: 5px;
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	break-inside: avoid;
+}
+
+#main ul li img{
+	width: 100%;
+	transition: all  0.3s ease;
+}
+
+
+#main ul li p{
+	margin-left: 5px;
+}
+
+.modal img{
+	width: 100%;
+}
+
+@media (max-width: 800px) {
+  #main ul {
+    column-count: 1;
+  }
+  .copy-value:hover{
+	background-color: #272727;
+	color: #fff;
+}
+}
+
+#footer{
+	clear: both;
+	width: 100%;
+	padding-top: 7px;
+	margin: 0;
+	height: 24px;
+	font-size: 0.5em;
+	text-align: right;
+	color: #fff;
+}
+
+p{
+	padding-right: 10px;
+	margin: 0;
+}
+
+.copy-value {
+  cursor: pointer;
+  position: relative;
+}
+ 
+/* Tooltip */
+.tooltip::after {
+    content: 'Copied!';
+    background: #fff;
+    display: inline-block;
+    color: #000;
+    border-radius: .1rem;
+    position: absolute;
+	left: 124%;
+	bottom: 0;
+    transform: translate(-50%, 0);
+    font-size: .8rem;
+    animation: fade-tooltip .5s 1s 1 forwards;
+}
+ 
+/* Animation */
+@keyframes fade-tooltip {
+  to { opacity: 0; }
+}
+
+/* 画面外にいる状態 */
+.fadein {
+    opacity : 0;
+    transform : translate(0, 100px);
+    transition : all 1000ms;
+    }
+
+/* 画面内に入った状態 */
+.fadein.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+    }

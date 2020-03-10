@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>j0uj1 portfolio</title>
+	<link href="main.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="iziModal-master/js/iziModal.min.js" type="text/javascript"></script>
+	<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+	<link rel="stylesheet" href="iziModal-master/css/iziModal.min.css">
+</head>
+
+<body>
+
+		<div class="header-title">
+
+
+				<!-- コンテンツ部分 -->
+				<div id="loading__wrapper">
+
+					<div id="side">
+						<div><p>j0uj1</p></div>
+						<div class="copy-value" data-clipboard-text="joji@teamdominion.jp"><p>joji@teamdominion.jp</p></div>
+					</div>
+
+					<main id="main">
+						<ul>
+							<li class="fadein"><img class="open-1 button" src="img/poster001.jpg" alt="卒業制作展_ポスター">
+								<p>/卒業制作展　　2018<br></p>
+							</li>
+							<li class="fadein"><img class="open-2 button" src="img/reiwa.jpg" alt="令和_ロゴ">
+								<p>/令和　　2018<br></p>
+							</li>
+							
+							<li class="fadein"><img class="open-3 button" src="img/Doppelganger.jpg" alt="令和_ロゴ">
+								<p>/Doppelgänger　　2018<br></p>
+							</li>
+							
+							<li class="fadein"><img class="open-4 button" src="img/beauty.jpg" alt="令和_ロゴ">
+								<p>/Beauty　　2018<br></p>
+							</li>
+							
+							<li class="fadein"><img class="open-5 button" src="img/manabe.jpg" alt="令和_ロゴ">
+								<p>/じょーじ　　2018<br></p>
+							</li>
+							
+							<li class="fadein"><img class="open-6 button" src="img/echo.jpg" alt="令和_ロゴ">
+								<p>/Echo　　2018<br></p>
+							</li>
+							
+							<li class="fadein"><img class="open-7 button" src="img/dimension.jpg" alt="令和_ロゴ">
+								<p>/Dimension　　2018<br></p></li>
+<!--							
+
+						<div id="modal-1">
+  						<div class="close">
+    					<a data-izimodal-close="">×</a>
+ 						</div>
+ 						<div class="modal"><img src="img/poster001.jpg" alt="卒業制作展_ポスター"></div>
+						</div>
+						<div id="modal-2">
+  						<div class="close">
+    					<a data-izimodal-close="">×</a>
+ 						</div>
+ 						<div class="modal"><img src="img/reiwa.jpg" alt="令和_ロゴ"></div>
+						</div>	
+						<div id="modal-3">
+  						<div class="close">
+    					<a data-izimodal-close="">×</a>
+ 						</div>
+ 						<div class="modal"><img src="img/Doppelganger.jpg" alt="令和_ロゴ"></div>
+						</div>
+						<div id="modal-4">
+  						<div class="close">
+    					<a data-izimodal-close="">×</a>
+ 						</div>
+ 						<div class="modal"><img src="img/beauty.jpg" alt="令和_ロゴ"></div>
+						</div>
+						<div id="modal-5">
+  						<div class="close">
+    					<a data-izimodal-close="">×</a>
+ 						</div>
+ 						<div class="modal"><img src="img/manabe.jpg" alt="令和_ロゴ"></div>
+						</div>
+						<div id="modal-6">
+  						<div class="close">
+    					<a data-izimodal-close="">×</a>
+ 						</div>
+ 						<div class="modal"><img src="img/echo.jpg" alt="令和_ロゴ"></div>
+						</div>	
+						<div id="modal-7">
+  						<div class="close">
+    					<a data-izimodal-close="">×</a>
+ 						</div>
+ 						<div class="modal"><img src="img/dimension.jpg" alt="令和_ロゴ"></div>
+						</div>	
+						</ul>-->
+					</main>
+
+					<footer id="footer">
+						<p>&copy; 2019 ManabeJoji</p>
+					</footer>
+		</div>
+	</div>
+
+	<script>
+		$(function () {
+			var h = $(window).height();
+			$('#loading__wrapper').css('display', 'none');
+			$('#is-loading ,#loading').height(h).css('display', 'block');
+		});
+
+		$(window).load(function () {
+			$('#is-loading').delay(900).fadeOut(800);
+			$('#loading').delay(600).fadeOut(300);
+			$('#loading__wrapper').css('display', 'block');
+		});
+
+
+		$(function () {
+			setTimeout('stopload()', 10000);
+		});
+
+		function stopload() {
+			$('#loading__wrapper').css('display', 'block');
+			$('#is-loading').delay(900).fadeOut(800);
+			$('#loading').delay(600).fadeOut(300);
+		}
+		
+		const clipboard = new ClipboardJS('.copy-value');
+		// Select all .copy-value items
+		const btns = document.querySelectorAll('.copy-value');
+		// Remove .tooptip class by mouseout
+		for(let i=0;i<btns.length;i++){
+			btns[i].addEventListener('mouseleave',clearTooltip);
+		}
+		function clearTooltip(e){
+			e.currentTarget.setAttribute('class','copy-value');
+		}
+		// Add .tooltip class when it's clicked
+		function showTooltip(elem){
+			elem.setAttribute('class','copy-value tooltip');
+		}
+		clipboard.on('success', function(e) {
+			showTooltip(e.trigger);
+		});
+		
+		$(document).on('click', '.open-1', function(event) {
+  		event.preventDefault();
+  		$('#modal-1').iziModal('open');
+		});
+		$('#modal-1').iziModal();		
+		$(document).on('click', '.open-2', function(event) {
+  		event.preventDefault();
+  		$('#modal-2').iziModal('open');
+		});
+		$('#modal-2').iziModal();		
+		$(document).on('click', '.open-3', function(event) {
+  		event.preventDefault();
+  		$('#modal-3').iziModal('open');
+		});
+		$('#modal-3').iziModal();
+		$(document).on('click', '.open-4', function(event) {
+  		event.preventDefault();
+  		$('#modal-4').iziModal('open');
+		});
+		$('#modal-4').iziModal();
+		$(document).on('click', '.open-5', function(event) {
+  		event.preventDefault();
+  		$('#modal-5').iziModal('open');
+		});
+		$('#modal-5').iziModal();
+		$(document).on('click', '.open-6', function(event) {
+  		event.preventDefault();
+  		$('#modal-6').iziModal('open');
+		});
+		$('#modal-6').iziModal();
+		$(document).on('click', '.open-7', function(event) {
+  		event.preventDefault();
+  		$('#modal-7').iziModal('open');
+		});
+		$('#modal-7').iziModal();
+		
+		window.onload = function() {
+  scroll_effect();
+
+  $(window).scroll(function(){
+   scroll_effect();
+  });
+
+  function scroll_effect(){
+   $('.fadein').each(function(){
+    var elemPos = $(this).offset().top;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > elemPos - windowHeight + 200){
+     $(this).addClass('scrollin');
+    }
+   });
+  }
+};
+		
+	</script>
+</body>
+
+</html>
